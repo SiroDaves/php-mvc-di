@@ -1,0 +1,11 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # Only rewrite if not a real file or directory
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+
+    # Pass the full URL path as a query param
+    RewriteRule ^(.*)$ index.php [QSA,L]
+</IfModule>

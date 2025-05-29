@@ -2,7 +2,7 @@
 
 function route(string $routeParam): string
 {
-    return "index.php?route=$routeParam";
+    return '/' . ltrim($routeParam, '/');
 }
 
 function redirectTo(string $route)

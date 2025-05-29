@@ -16,7 +16,9 @@ class RouteHandler
 
     public function handleRoute()
     {
-        $route = $_GET['route'] ?? '/';
+        $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+        $route = $this->normalizeRoute($uri);
+
         $method = $_SERVER['REQUEST_METHOD'] ?? 'GET';
 
         foreach ($this->routes as $config) {
@@ -50,10 +52,15 @@ class RouteHandler
 
         return $this->redirectToIndex();
     }
+    
+    private function normalizeRoute(string $route): string
+    {
+        return '/' . trim($route, '/');
+    }
 
     private function redirectToIndex()
     {
-        header('Location: index.php?route=/');
+        header('Location: /');
         exit();
     }
 }
