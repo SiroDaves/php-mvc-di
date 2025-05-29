@@ -2,9 +2,11 @@
 
 namespace App\Controllers;
 
+use App\Core\View;
+
 class MainController {
     public function index()
     {
-        require_once 'views/main.php';
+        View::render('main');
     }
 }

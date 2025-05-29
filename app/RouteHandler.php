@@ -2,6 +2,8 @@
 
 namespace App;
 
+use App\Core\DependencyContainer;
+
 class RouteHandler
 {
 

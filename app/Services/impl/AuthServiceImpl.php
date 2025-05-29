@@ -2,6 +2,7 @@
 
 namespace App\Services\impl;
 
+use App\Core\View;
 use App\Dtos\LoginRequestDto;
 use App\Dtos\RegisterRequestDto;
 use App\Models\User;
@@ -23,7 +24,7 @@ class AuthServiceImpl implements AuthService
     {
         if (isLoggedIn()) return redirectTo('/account');
 
-        require_once 'views/login.php';
+        View::render('login');
     }
 
     public function authenticate(LoginRequestDto $loginRequest)
@@ -33,27 +34,21 @@ class AuthServiceImpl implements AuthService
         $v->rule('required', ['usernameOrEmail', 'password'])
             ->message('The field is required');
 
-        if ($v->validate())
-        {
+        if ($v->validate()) {
             $user = $this->userRepository->findByUsernameOrEmail($loginRequest->usernameOrEmail, $loginRequest->usernameOrEmail);
 
-            if ($user != null)
-            {
+            if ($user != null) {
                 setUser($user);
 
                 return redirectTo('/account');
-            }
-            else
-            {
+            } else {
                 addFlashMessage('error', 'User not found');
                 setOldFields('login', [
                     'usernameOrEmail' => $loginRequest->usernameOrEmail
                 ]);
-                require_once 'views/login.php';
+                View::render('login');
             }
-        }
-        else
-        {
+        } else {
             setOldFields('login', [
                 'usernameOrEmail' => $loginRequest->usernameOrEmail
             ]);
@@ -65,8 +60,7 @@ class AuthServiceImpl implements AuthService
     public function registerView()
     {
         if (isLoggedIn()) return redirectTo('/account');
-
-        require_once 'views/register.php';
+        View::render('register');
     }
 
     public function register(RegisterRequestDto $registerRequest)
@@ -79,28 +73,24 @@ class AuthServiceImpl implements AuthService
         $v->rule('email', ['email'])
             ->message('The field must be an email');
 
-        if ($v->validate())
-        {
+        if ($v->validate()) {
             $existsByUsername = $this->userRepository->existsByUsername($registerRequest->username);
             $existsByEmail = $this->userRepository->existsByEmail($registerRequest->email);
 
-            if ($existsByUsername)
-            {
+            if ($existsByUsername) {
                 addFlashMessage('error', 'Username is already taken');
             }
 
-            if ($existsByEmail)
-            {
+            if ($existsByEmail) {
                 addFlashMessage('error', 'Email is already taken');
             }
 
-            if ($existsByUsername || $existsByEmail)
-            {
+            if ($existsByUsername || $existsByEmail) {
                 setOldFields('register', [
                     'username' => $registerRequest->username,
                     'email' => $registerRequest->email
                 ]);
-                require_once 'views/register.php';
+                View::render('register');
                 return;
             }
 
@@ -113,17 +103,13 @@ class AuthServiceImpl implements AuthService
 
             $savedUser = $this->userRepository->save($user);
 
-            if ($savedUser != null)
-            {
+            if ($savedUser != null) {
                 setUser($savedUser);
                 addFlashMessage('success', 'Registered successfully');
 
                 return redirectTo('/account');
-            }
-            else die('Error while saving user');
-        }
-        else
-        {
+            } else die('Error while saving user');
+        } else {
             setValidationErrors('register', $v->errors());
             require_once 'views/register.php';
         }

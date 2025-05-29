@@ -1,13 +1,13 @@
 <?php
 
-require __DIR__ . '/vendor/autoload.php';
+require __DIR__ . '/../vendor/autoload.php';
 
 ini_set('error_log', __DIR__ . '/logs/custom-error.log');
 
 use App\Controllers\AccountController;
 use App\Controllers\AuthController;
 use App\Controllers\MainController;
-use App\DependencyContainer;
+use App\Core\DependencyContainer;
 use App\RouteHandler;
 use Dotenv\Dotenv;
 

@@ -28,8 +28,9 @@ The MVC design pattern combined with dependency injection is an excellent combin
 - **`.gitignore`**: Configuration file to ignore files in Git.
 - **`.htaccess`**: Configuration file for URL rewriting in Apache.
 - **`composer.json`**: Composer file with dependencies and autoloads.
-- **`index.php`**: Main entry point of the application.
-- **`src/`**: Contains the application logic.
+- **`public/`**: Web root (document root).
+  - **`index.php`**: Main entry point of the application.
+- **`app/`**: Contains the application logic.
   - **`Controllers/`**: Application controllers.
   - **`DependencyContainer.php`**: Contains the dependency container.
   - **`Dtos/`**: Data Transfer Objects.
@@ -38,7 +39,7 @@ The MVC design pattern combined with dependency injection is an excellent combin
   - **`Repositories/`**: Repositories to interact with the database.
   - **`RouteHandler.php`**: Handles the application routing.
   - **`Services/`**: Application services.
-- **`views/`**: Application views.
+  - **`views/`**: Application views.
 
 ## UML Diagram (Repository)
 
@@ -70,7 +71,7 @@ The MVC design pattern combined with dependency injection is an excellent combin
 
 1. Start the local PHP server:
    ```bash
-   php -S localhost:8000
+   php -S localhost:8000 -t public
    ```
 2. Access the application at `http://localhost:8000`
 
