@@ -86,5 +86,5 @@ Contributions are welcome. If you want to contribute, follow these steps:
 
 ## Resources
 
-- [SQL Script](./resources/php-mvc-repository.png)
-- [UML Diagram (Repository)](./resources/php-mvc-repository.png)
+- [SQL Script](./resources/migrations.sql)
+- [UML Diagram (Repository)](./resources/illustration.png)

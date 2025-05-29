@@ -18,6 +18,7 @@ Thumbs.db
 # cache and logs
 cache/
 logs/
+storage/
 *.log
 
 # Temp files
