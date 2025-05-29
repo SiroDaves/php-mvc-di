@@ -72,7 +72,7 @@ The MVC design pattern combined with dependency injection is an excellent combin
    ```bash
    php -S localhost:8000
    ```
-2. ccess the application at `http://localhost:8000`
+2. Access the application at `http://localhost:8000`
 
 ## Contributions
 
