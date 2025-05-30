@@ -8,7 +8,6 @@ use App\Services\AuthService;
 
 class AuthController
 {
-
     private AuthService $authService;
 
     public function __construct(AuthService $authService)
@@ -29,7 +28,7 @@ class AuthController
     public function processLogin()
     {
         $dto = new LoginRequestDto;
-        $dto->usernameOrEmail = $_POST['usernameOrEmail'] ?? '';
+        $dto->email = $_POST['email'] ?? '';
         $dto->password = $_POST['password'] ?? '';
 
         $this->authService->authenticate($dto);

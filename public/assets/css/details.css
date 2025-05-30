@@ -1,0 +1,362 @@
+
+.buttons {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    width: 50%;
+}
+
+.button1 {
+    background-color: #4CAF50;
+    /* Green */
+    border: none;
+    color: white;
+    padding: 15px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.button11A {
+    background-color: #EE82EE;
+    /* Green */
+    border: none;
+    color: white;
+    padding: 15px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.button11B {
+    background-color: #A9A9A9;
+    /* Green */
+    border: none;
+    color: white;
+    padding: 15px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.button2 {
+    background-color: #F4330C;
+    /* Green */
+    border: none;
+    color: white;
+    padding: 15px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.button3 {
+    background-color: #3EBCF3;
+    /* Green */
+    border: none;
+    color: white;
+    padding: 15px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.button3ab {
+    background-color: #3EBCF3;
+    /* Green */
+    border: none;
+    color: white;
+    padding: 15px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.button3a {
+    background-color: #3EBCF3;
+    /* Green */
+    border: none;
+    color: white;
+    padding: 8px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+}
+
+.button3_a {
+    background-color: #F3903E;
+    /* Green */
+    border: none;
+    color: white;
+    padding: 8px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+}
+
+.button3_red {
+    background-color: #F3903E;
+    /* Green */
+    border: none;
+    color: white;
+    padding: 8px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+}
+
+.button4 {
+    background-color: #F3903E;
+    /* Green */
+    border: none;
+    color: white;
+    padding: 15px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.button5 {
+    background-color: #3EF341;
+    /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.button6 {
+    background-color: #F33E75;
+    /* Green */
+    border: none;
+    color: white;
+    padding: 15px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.button8 {
+    background-color: #4CAF50;
+    /* Green */
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 11px;
+}
+
+.button8a {
+    background-color: #4CAF50;
+    /* Green */
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+}
+
+.button8b {
+    background-color: #4CAF50;
+    /* Green */
+    border: none;
+    color: white;
+    padding: px 10px;
+    text-align: left;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    width: 100%;
+}
+
+.button9 {
+    background-color: #F4330C;
+    /* Green */
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 11px;
+}
+
+.button2syntax {
+    border: none;
+    color: BLUE;
+
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 11px;
+}
+
+.button8bs {
+    background-color: #4CAF50;
+    /* Green */
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: left;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    width: 100%;
+}
+
+.button9b {
+    background-color: #F4330C;
+    /* Green */
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: left;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    width: 100%;
+}
+
+.buttonDeleted {
+    background-color: #C31507;
+    /* RED */
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: left;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    width: 100%;
+}
+
+.button10 {
+    background-color: #F33E75;
+    /* Green */
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 11px;
+}
+
+.button10b {
+    background-color: #F33E75;
+    /* Green */
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: left;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    width: 100%;
+}
+
+.button8bc {
+    background-color: #4CAF50;
+    /* Green */
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: left;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    width: 100%;
+}
+
+.button11ba {
+    background-color: #EE82EE;
+    /* Green */
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: left;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    width: 100%;
+}
+
+
+.button10bc {
+    background-color: #F5092D;
+    /* Green */
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: left;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    width: 100%;
+}
+
+#search-data {
+    padding: 10px;
+    border: solid 1px #BDC7D8;
+    margin-bottom: 20px;
+    display: inline;
+    width: 100%;
+
+}
+
+.search-result {
+    border-bottom: solid 1px #BDC7D8;
+    padding: 10px;
+    font-family: Times New Roman;
+    font-size: 20px;
+    color: #62CCF9;
+}
+
+#searchTSC {
+    padding: 10px;
+    border: solid 1px #BDC7D8;
+    margin-bottom: 20px;
+    display: inline;
+    width: 40%;
+
+}
+
+.search-result {
+    border-bottom: solid 1px #BDC7D8;
+    padding: 10px;
+    font-family: Times New Roman;
+    font-size: 20px;
+    color: blue;
+}
+
+.alerts {
+    padding: 5px;
+    background-color: #F5850D;
+    /* Red */
+    color: white;
+}

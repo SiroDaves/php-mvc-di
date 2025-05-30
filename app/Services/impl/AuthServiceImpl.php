@@ -13,11 +13,11 @@ use Valitron\Validator;
 class AuthServiceImpl implements AuthService
 {
 
-    private UserRepository $userRepository;
+    private UserRepository $userRepo;
 
-    public function __construct(UserRepository $userRepository)
+    public function __construct(UserRepository $userRepo)
     {
-        $this->userRepository = $userRepository;
+        $this->userRepo = $userRepo;
     }
 
     public function loginView()
@@ -27,15 +27,15 @@ class AuthServiceImpl implements AuthService
         View::render('login');
     }
 
-    public function authenticate(LoginRequestDto $loginRequest)
+    public function authenticate(LoginRequestDto $loginReq)
     {
-        $v = new Validator(get_object_vars($loginRequest));
+        $v = new Validator(get_object_vars($loginReq));
 
         $v->rule('required', ['usernameOrEmail', 'password'])
             ->message('The field is required');
 
         if ($v->validate()) {
-            $user = $this->userRepository->findByUsernameOrEmail($loginRequest->usernameOrEmail, $loginRequest->usernameOrEmail);
+            $user = $this->userRepo->findByEmail($loginReq->email);
 
             if ($user != null) {
                 setUser($user);
@@ -44,13 +44,13 @@ class AuthServiceImpl implements AuthService
             } else {
                 addFlashMessage('error', 'User not found');
                 setOldFields('login', [
-                    'usernameOrEmail' => $loginRequest->usernameOrEmail
+                    'email' => $loginReq->email
                 ]);
                 View::render('login');
             }
         } else {
             setOldFields('login', [
-                'usernameOrEmail' => $loginRequest->usernameOrEmail
+                'email' => $loginReq->email
             ]);
             setValidationErrors('login', $v->errors());
             View::render('login');
@@ -63,9 +63,9 @@ class AuthServiceImpl implements AuthService
         View::render('register');
     }
 
-    public function register(RegisterRequestDto $registerRequest)
+    public function register(RegisterRequestDto $registerReq)
     {
-        $v = new Validator(get_object_vars($registerRequest));
+        $v = new Validator(get_object_vars($registerReq));
 
         $v->rule('required', ['username', 'email', 'password'])
             ->message('The field is required');
@@ -74,34 +74,29 @@ class AuthServiceImpl implements AuthService
             ->message('The field must be an email');
 
         if ($v->validate()) {
-            $existsByUsername = $this->userRepository->existsByUsername($registerRequest->username);
-            $existsByEmail = $this->userRepository->existsByEmail($registerRequest->email);
-
-            if ($existsByUsername) {
-                addFlashMessage('error', 'Username is already taken');
-            }
+            $existsByEmail = $this->userRepo->existsByEmail($registerReq->email);
 
             if ($existsByEmail) {
                 addFlashMessage('error', 'Email is already taken');
             }
 
-            if ($existsByUsername || $existsByEmail) {
+            if ($existsByEmail) {
                 setOldFields('register', [
-                    'username' => $registerRequest->username,
-                    'email' => $registerRequest->email
+                    'username' => $registerReq->username,
+                    'email' => $registerReq->email
                 ]);
                 View::render('register');
                 return;
             }
 
-            $hash = password_hash($registerRequest->password, PASSWORD_BCRYPT);
+            $hash = password_hash($registerReq->password, PASSWORD_BCRYPT);
 
             $user = new User;
-            $user->username = $registerRequest->username;
-            $user->email = $registerRequest->email;
+            $user->username = $registerReq->username;
+            $user->email = $registerReq->email;
             $user->hash = $hash;
 
-            $savedUser = $this->userRepository->save($user);
+            $savedUser = $this->userRepo->save($user);
 
             if ($savedUser != null) {
                 setUser($savedUser);
