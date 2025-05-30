@@ -53,7 +53,7 @@ class AuthServiceImpl implements AuthService
                 'usernameOrEmail' => $loginRequest->usernameOrEmail
             ]);
             setValidationErrors('login', $v->errors());
-            require_once 'views/login.php';
+            View::render('login');
         }
     }
 
@@ -111,7 +111,7 @@ class AuthServiceImpl implements AuthService
             } else die('Error while saving user');
         } else {
             setValidationErrors('register', $v->errors());
-            require_once 'views/register.php';
+            View::render('register');
         }
     }
 
