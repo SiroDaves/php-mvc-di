@@ -1,21 +1,21 @@
 {
     "autoload": {
         "psr-4": {
-            "App\\" : "app/",
-            "App\\Controllers\\": "app/Controllers/",
-            "App\\Dtos\\": "app/Dtos/",
-            "App\\Models\\": "app/Models/",
-            "App\\Repositories\\": "app/Repositories/",
-            "App\\Services\\": "app/Services/",
-            "App\\Views\\": "app/Views/"
+            "App\\" : "src/",
+            "App\\Controllers\\": "src/Controllers/",
+            "App\\Dtos\\": "src/Dtos/",
+            "App\\Models\\": "src/Models/",
+            "App\\Repositories\\": "src/Repositories/",
+            "App\\Services\\": "src/Services/",
+            "App\\Views\\": "src/Views/"
         },
         "files": [
-            "app/Core/Helpers/csrf_functions.php",
-            "app/Core/Helpers/flash_messages.php",
-            "app/Core/Helpers/old_field_functions.php",
-            "app/Core/Helpers/route_functions.php",
-            "app/Core/Helpers/user_functions.php",
-            "app/Core/Helpers/validation_functions.php"
+            "src/Core/Helpers/csrf_functions.php",
+            "src/Core/Helpers/flash_messages.php",
+            "src/Core/Helpers/old_field_functions.php",
+            "src/Core/Helpers/route_functions.php",
+            "src/Core/Helpers/user_functions.php",
+            "src/Core/Helpers/validation_functions.php"
         ]
     },
     "require": {

@@ -39,7 +39,7 @@ The MVC design pattern combined with dependency injection is an excellent combin
   - **`Repositories/`**: Repositories to interact with the database.
   - **`RouteHandler.php`**: Handles the application routing.
   - **`Services/`**: Application services.
-  - **`views/`**: Application views.
+  - **`Views/`**: Application views.
 
 ## UML Diagram (Repository)
 
